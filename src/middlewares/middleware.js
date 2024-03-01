@@ -1,4 +1,6 @@
 exports.middlewareGlobal = (req, res, next) =>{
+    res.locals.umaVariavelLocal = 'valor da variavel local';
+
     console.log();
     
     if(req.body.cliente){
@@ -8,5 +10,9 @@ exports.middlewareGlobal = (req, res, next) =>{
 
     console.log();
     
+    next();
+};
+
+exports.outroMiddleware = (req, res, next)=>{
     next();
 };
